@@ -22,10 +22,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      // 👇 Initial Screen
       initialRoute: AppRoutes.splash,
 
-      // 👇 All Routes
       getPages: AppPages.pages,
     );
   }

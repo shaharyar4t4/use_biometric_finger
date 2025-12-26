@@ -28,20 +28,17 @@ class DrawerView extends StatelessWidget {
             ),
           ),
 
-          /// 🔐 Fingerprint Toggle
-ListTile(
-  leading: const Icon(Icons.fingerprint),
-  title: const Text('Fingerprint Login'),
-  onTap: () {
-    Get.back(); // 🔑 Close drawer first
-    Get.to(() => FingerprintView());
-  },
-),
-
+          ListTile(
+            leading: const Icon(Icons.fingerprint),
+            title: const Text('Fingerprint Login'),
+            onTap: () {
+              Get.back();
+              Get.to(() => FingerprintView());
+            },
+          ),
 
           const Divider(),
 
-          /// 🚪 Logout
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),

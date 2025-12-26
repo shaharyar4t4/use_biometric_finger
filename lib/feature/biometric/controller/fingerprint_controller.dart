@@ -19,7 +19,6 @@ class FingerprintController extends GetxController {
     isEnabled.value = await storageService.isBiometricEnabled();
   }
 
-  /// 🔐 Enable biometric (SAFE FLOW)
   Future<void> enableBiometric() async {
     if (isEnabled.value) return;
 
@@ -37,7 +36,6 @@ class FingerprintController extends GetxController {
       return;
     }
 
-    /// ⏳ Let UI settle
     await Future.delayed(const Duration(milliseconds: 400));
 
     final success = await biometricService.authenticate();
@@ -54,7 +52,6 @@ class FingerprintController extends GetxController {
     }
   }
 
-  /// 🔕 Disable biometric
   Future<void> disableBiometric() async {
     await storageService.setBiometric(false);
     isEnabled.value = false;
